@@ -1,6 +1,6 @@
-<div>
-  <h1 class="text-center">Krok Pierwszy: Wybierz Samochód</h1>
-  <div class="flex flex-wrap align-items-center justify-content-center"> 
+<div class="">
+  <h1 class="text-center">1. Wybierz Samochód</h1>
+  <div class="flex flex-wrap align-items-center justify-content-center">
     <div class="relative border-round border-solid border-primary-100 w-14rem h-14rem m-3">
       <div class="w-full h-9rem bg-blue-400 bg-cover bg-center"
         style="background-image: url('https://static.autox.com/uploads/2023/07/Land-Rover-Range-Rover-Velar-Fuji-White.jpg');">
@@ -30,5 +30,18 @@
       <p class="absolute bottom-0 left-0 right-0 m-0 mb-2 text-center">VW Lupo</p>
     </div>
   </div>
-  <p-button label="Submit"></p-button>
+  <div class="card flex flex-wrap gap-3 justify-content-center">
+    <p-button label="Dalej" [text]="true" [raised]="true" class="text-primary-100"></p-button>
+  </div>
+</div>
+
+<div class="flex flex-wrap align-items-center justify-content-center">
+  <div *ngFor="let car of cars" class="border-round border-solid border-primary-100 w-14rem h-14rem m-3">
+    <div class="w-full h-9rem bg-blue-400">
+      <img class="h-full w-full" [src]="car.imgUrl" alt="" style="object-fit: cover;">
+    </div>
+    <h2 class=" bottom-0 right-0 left-0 m-0 mb-5 text-center">{{car.tablica}}</h2>
+    <p class=" bottom-0 left-0 right-0 m-0 mb-2 text-center">{{car.name}}</p>
+    <button pButton pRipple [disabled]="car.isReserveted">Wybierz</button>
+  </div>
 </div>
