@@ -1,6 +1,7 @@
 <h1 class="text-center">1. Wybierz Samochód</h1>
 <div class="flex flex-wrap align-items-center justify-content-center">
-  <div *ngFor="let car of cars" class=" flex flex-column align-items-center border-solid border-round w-14rem h-14rem m-5">
+  <div *ngFor="let car of cars"
+    class=" flex flex-column align-items-center border-solid border-round w-14rem h-14rem m-5">
     <div class="w-full h-8rem">
       <img class="h-screen max-h-full w-full" [src]="car.imgUrl" alt="" style="object-fit: cover;">
     </div>
